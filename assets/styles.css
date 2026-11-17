@@ -50,3 +50,36 @@
 @media(max-width:1000px){.brand img.brand-emblem{width:46px;height:46px}.brand img.brand-wordmark{width:178px}.hero--photo .hero-grid{min-height:600px}}
 @media(max-width:800px){.brand img.brand-emblem{width:42px;height:42px}.brand img.brand-wordmark{width:158px}.hero--photo .hero-grid{min-height:550px;padding-block:85px 92px}.hero--photo{background-image:linear-gradient(90deg,rgba(7,28,18,.85),rgba(7,29,18,.58)),url('hero-grass.webp');background-position:58% center}.gallery-grid{gap:16px}.gallery-card{min-height:290px}.gallery-card figcaption{left:19px;bottom:20px;right:14px}}
 @media(max-width:620px){.hero--photo .hero-grid{min-height:520px;padding-block:75px 82px}.hero--photo .hero-copy h1{font-size:clamp(43px,10vw,62px)}.gallery-card,.gallery-card--wide{grid-column:span 12;min-height:290px}.gallery-card:last-child{min-height:360px}.gallery-card:last-child img{object-position:center 52%}.picture-block.owner-portrait{min-height:355px}.footer .brand img.brand-emblem{width:47px;height:47px}.footer .brand img.brand-wordmark{width:184px}}
+
+/* Secondary-page heroes: abstract mower stripes instead of the original cream fill.
+   Keep the real grass photograph exclusive to the homepage hero. */
+.page-hero {
+  background-color: #d4e6d3;
+  background-image:
+    linear-gradient(90deg,
+      rgba(248, 251, 243, .97) 0%,
+      rgba(248, 251, 243, .89) 28%,
+      rgba(248, 251, 243, .48) 58%,
+      rgba(248, 251, 243, .04) 100%),
+    url('abstract-lawn-stripes.webp');
+  background-position: center, center 34%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 5px solid var(--pine);
+}
+.page-hero::after { display: none; }
+.page-hero h1 { color: var(--forest); }
+.page-hero h1 span[style] { color: #315f39 !important; }
+.page-hero .lead { color: #365643; font-weight: 500; }
+.page-hero .eyebrow.green { color: #315f39; }
+@media (max-width: 800px) {
+  .page-hero {
+    background-image:
+      linear-gradient(90deg,
+        rgba(248, 251, 243, .94),
+        rgba(248, 251, 243, .81) 70%,
+        rgba(248, 251, 243, .60)),
+      url('abstract-lawn-stripes.webp');
+    background-position: center, 53% center;
+  }
+}
