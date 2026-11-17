@@ -83,3 +83,140 @@
     background-position: center, 53% center;
   }
 }
+
+
+/* ========================================================================
+   GreenScenez visual system: clean, numbered content instead of emoji glyphs.
+   Keeps actual action icons small, consistent, and accessible.
+   ======================================================================== */
+
+/* Number-led, compact proof strip (desktop and mobile). */
+.proof-inner {
+  gap: clamp(18px, 2.3vw, 30px);
+  padding-block: 30px;
+}
+.proof-item { gap: 14px; min-width: 0; }
+.proof-item > .proof-index {
+  display: block;
+  flex: 0 0 29px;
+  border: 0;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  color: var(--leaf);
+  font: 800 13px/1.3 Manrope, system-ui, sans-serif;
+  letter-spacing: .04em;
+  font-variant-numeric: tabular-nums;
+}
+.proof-item > div { min-width: 0; }
+.proof-item strong { font-size: 15px; line-height: 1.4; }
+.proof-item > div > span { font-size: 13px; line-height: 1.5; margin-top: 3px; }
+
+/* Service cards: the service number is the visual identifier. */
+.service-card {
+  padding: 28px;
+  min-height: 226px;
+  border-radius: 18px;
+}
+.service-num {
+  display: block;
+  margin-bottom: 21px;
+  font-size: 11px;
+  letter-spacing: .14em;
+  color: #668d50;
+}
+.service-card h3 {
+  font-size: 21px;
+  margin-bottom: 11px;
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+.service-card p {
+  font-size: 14px;
+  line-height: 1.62;
+  margin-bottom: 18px;
+}
+.service-card .text-link {
+  padding-top: 2px;
+  width: fit-content;
+}
+.service-card:focus-visible,
+.feature:focus-visible,
+.contact-detail a:focus-visible {
+  outline: 3px solid #8aaf5d;
+  outline-offset: 4px;
+}
+
+/* Values: typographic labels instead of mismatched ornamental characters. */
+.feature { padding: 28px; border-radius: 18px; }
+.feature .feature-index {
+  display: block;
+  margin-bottom: 14px;
+  color: #64884c;
+  font-size: 10px;
+  line-height: 1.45;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+.feature h3 { font-size: 21px; margin-bottom: 9px; }
+.feature p { font-size: 14.5px; line-height: 1.65; }
+
+/* Number-led services page, without the unrelated square icon-like backgrounds. */
+.service-row .number {
+  width: auto;
+  height: auto;
+  display: block;
+  background: transparent;
+  border-radius: 0;
+  color: #638451;
+  font: 800 22px/1.3 Manrope, system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Functional contact information uses matching 24x24 SVG line icons only. */
+.contact-detail { gap: 14px; }
+.contact-detail .cd-icon {
+  display: block;
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  color: var(--leaf);
+}
+.contact-detail > div { min-width: 0; }
+.contact-detail a, .contact-detail > div > span {
+  overflow-wrap: anywhere;
+}
+
+/* A small geometric marker replaces the font-dependent checkmark character. */
+.bullet:before {
+  content: '';
+  flex-basis: 8px;
+  width: 8px;
+  height: 8px;
+  margin-top: 9px;
+  border-radius: 50%;
+  background: #568a4b;
+}
+
+@media (max-width: 800px) {
+  .proof-inner { gap: 17px; padding-block: 27px; }
+  .proof-item { gap: 12px; padding-bottom: 17px; }
+  .proof-item:last-child { padding-bottom: 0; }
+  .proof-item strong { font-size: 16px; }
+  .proof-item > div > span { font-size: 13.5px; }
+  .service-card { min-height: 0; }
+}
+@media (max-width: 520px) {
+  .service-card { padding: 25px 24px 26px; min-height: 0; }
+  .service-num { margin-bottom: 15px; }
+  .service-card h3 { font-size: 21px; margin-bottom: 10px; }
+  .service-card p { font-size: 14.5px; margin-bottom: 12px; }
+  .service-card .text-link { margin-top: 6px; }
+  .services-grid { gap: 14px; }
+  .feature-list { gap: 14px; margin-top: 27px; }
+  .feature { padding: 24px 23px; }
+  .feature .feature-index { margin-bottom: 13px; }
+  .feature h3 { font-size: 20px; }
+  .service-row .number { margin-bottom: 11px; }
+}
